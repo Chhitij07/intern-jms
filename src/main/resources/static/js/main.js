@@ -54,10 +54,11 @@ function onError(error) {
 
 function sendMessage(event) {
     var messageContent = messageInput.value.trim();
-
+    var to = document.querySelector('#to_name').value.trim();
     if(messageContent && stompClient) {
         var chatMessage = {
             sender: username,
+            to: to,
             content: messageInput.value,
             type: 'CHAT'
         };

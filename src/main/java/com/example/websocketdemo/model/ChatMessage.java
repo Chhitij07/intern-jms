@@ -7,13 +7,23 @@ public class ChatMessage {
     private MessageType type;
     private String content;
     private String sender;
-
+    private String to;
     public enum MessageType {
         CHAT,
         JOIN,
         LEAVE
     }
-
+    public ChatMessage(String content,String sender,String to)
+    {
+    	this.content=content;
+    	this.sender=sender;
+    	this.to=to;
+    	this.type=MessageType.CHAT;
+    }
+    public ChatMessage()
+    {
+    	
+    }
     public MessageType getType() {
         return type;
     }
@@ -37,4 +47,12 @@ public class ChatMessage {
     public void setSender(String sender) {
         this.sender = sender;
     }
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
 }
